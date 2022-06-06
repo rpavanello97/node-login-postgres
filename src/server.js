@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const session = require("express-session");
 const flash = require("express-flash");
 const passport = require("passport");
+const path = require("path");
 
 const initializePassport = require('./passportConfing');
 
@@ -12,10 +13,9 @@ initializePassport(passport);
 
 const PORT = process.env.PORT || 4000;
 
+/** General configs */
 app.set('view engine', "ejs");
-/** Dont send details to front end */
-app.use(express.urlencoded({ extended: false }))
-
+app.use(express.urlencoded({ extended: false })) //Dont send details to front end
 app.use(
     session({
         secret: 'secret',
@@ -23,14 +23,12 @@ app.use(
         saveUninitialized: false
     })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use(flash());
+app.use(express.static(path.join(__dirname, '../public')));
 
 /** GETS */
-
 app.get('/', (req, res) => {
     res.render('index')
 });
@@ -63,7 +61,6 @@ app.get('/users/logout', (req, res) => {
 });
 
 /** POSTS */
-/** /users/register */
 app.post('/users/register', async (req, res) => {
     let { name, email, password, password2 } = req.body
 
