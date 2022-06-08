@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 4000;
 
 /** General configs */
 app.set('view engine', "ejs");
-app.use(express.urlencoded({ extended: false })) //Dont send details to front end
+app.use(express.urlencoded({ extended: false })); //Dont send details to front end
 app.use(
     session({
         secret: 'secret',

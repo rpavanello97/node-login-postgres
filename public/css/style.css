@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -65,7 +65,8 @@ form h2 {
     border-bottom: 2px solid #d9d9d9;
 }
 
-.input-div:after, .input-div:before {
+.input-div:after,
+.input-div:before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -84,7 +85,7 @@ form h2 {
 }
 
 .input-div.focus .i i {
-    color:#996DFF
+    color: #996DFF
 }
 
 .input-div.focus div h5 {
@@ -92,7 +93,8 @@ form h2 {
     font-size: 15px;
 }
 
-.input-div.focus:after, .input-div.focus:before {
+.input-div.focus:after,
+.input-div.focus:before {
     width: 50%;
 }
 
@@ -115,12 +117,12 @@ form h2 {
     transition: .3s;
 }
 
-.input-div > div {
+.input-div>div {
     position: relative;
     height: 45px;
 }
 
-.input-div > div h5 {
+.input-div>div h5 {
     position: absolute;
     left: 10px;
     top: 50%;
@@ -176,13 +178,13 @@ a:hover {
     transition: 0.5s;
 }
 
-.btn:hover{
+.btn:hover {
     background-position: right;
 }
 
 
 /** New */
-.btn-login-home {    
+.btn-login-home {
     width: 100%;
     height: 50px;
     border-radius: 25px;
@@ -193,7 +195,7 @@ a:hover {
     background-image: linear-gradient(to right, #996DFF, #604997, #2da37c);
     cursor: pointer;
     color: #fff;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     background-size: 200%;
     transition: 0.5s;
@@ -203,7 +205,7 @@ a:hover {
     align-items: center;
 }
 
-.btn-login-home:hover{
+.btn-login-home:hover {
     background-position: right;
 }
 
@@ -212,6 +214,43 @@ ul {
     color: #882222;
 }
 
+/** Dashboard page */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    background-image: linear-gradient(to right, #996DFF, #604997, #5f31c9);
+}
+
+.topnav a {    
+    color: #f2f2f2;    
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav-left a { 
+    float: left;
+}
+
+.topnav-right a { 
+    float: right;
+}
+
+.topnav a:hover {    
+    color: #2da37c;
+}
+
+.topnav a.active {        
+    background-color:#2da37c;
+}
+
+.topnav a.active:hover {        
+    color:#141414;
+}
+
+
+/** Responsivity */
 @media screen and (max-width: 1050px) {
     .container {
         grid-gap: 5rem;
@@ -226,7 +265,7 @@ ul {
     form h2 {
         font-size: 2.4rem;
         margin: 8px 0;
-    } 
+    }
 
     .img img {
         width: 400px;
